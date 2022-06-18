@@ -1,0 +1,41 @@
+#swiper-slider{
+	height:750px;
+	//để ko che header
+	margin-top:$mg-5;
+	background-color:$color-dark-blue-200;
+	.swiper-container{
+		height:500px;
+		.swiper-wrapper{
+			//chỉnh height < 100% để những dấu tròn pagination nằm bên dưới viền ảnh
+			height:93%;
+			.swiper-slide{
+				height:100%;
+			}
+		}
+	}
+	//chỉnh các nút tròn
+	.swiper-pagination-bullet{
+		width:12px;
+		height:12px;
+		background-color:$color-blue-100;
+	}
+	.swiper-button-next, .swiper-button-prev{
+		top:45%;
+		background-color:$color-dark-white;
+		padding:$pd-6 $pd-5;
+		border-radius:0.9rem;
+	}
+	.swiper-button-prev{
+		left:-0.8rem;
+	}
+	.swiper-button-next{
+		right:-	0.8rem;
+	}
+	.swiper-button-explore{
+		text-align:center;
+		width:100%;
+		position:absolute;
+		bottom:20%;
+		z-index:9;
+	}
+}

@@ -1,0 +1,88 @@
+//tạo vòng lặp để lấy màu background cho từng chiếc xe
+@each $stt,$bg-color in (1,#3C4C5C) (2,#5E5E5E) (3,#14409A) (4,#C0BAB5) (5,#5C5C5C) (6,#33569C){
+	//nối chuỗi để tạo id . Vd: "img-1", "img-2"
+	#img-#{$stt}{
+		background:linear-gradient(#bbbdc0,$color-grey,$color-grey);
+	}
+	.vehicle-product:hover >#img-#{$stt}{
+		background:linear-gradient($bg-color,$color-grey,$color-grey);
+	}
+	//tận dụng $stt để duyệt mảng gắn thời gian delay cho mỗi vehicle-product để mỗi cái hiện lên lần lượt. Vd class ="delay-1" sẽ có thời gian delay là 0.15s
+	.delay-#{$stt}{
+		animation-delay:   (0.15s * $stt) ;
+	}
+}
+
+//Gắn background-img cho carousel 
+@each $stt,$img in (1,banner-1) (2,banner-2) (3,banner-3) (4,banner-4){
+	#swiper-slider{
+		.slide-#{$stt}{
+			background:url('../img/#{$img}.jpg');
+			background-size:cover;
+			background-position: center center;
+			//Màn hình nhỏ thì đổi hình khác
+			@media screen and (max-width:768px){
+				background:url('../img/#{$img}-xs.jpg');
+				background-size:cover;
+				//bỏ background-position để khỏi chạy lên xuống
+				background-position:unset;
+			}
+			@media screen and (max-width:576px){
+				background:url('../img/#{$img}-xs.jpg');
+				background-size:cover;
+				background-position: center center;
+			}
+
+		}
+	}
+}
+
+//Gắn background-image cho carousel Bootstrap - OUR VEHICLES
+@each $stt,$img in (1,slider-1) (2,slider-2) (3,slider-3) (4,slider-4) (5,slider-5){
+	.carousel-inner{
+		.item-#{$stt}{
+			background:url('../img/#{$img}.jpg');
+			background-size:cover;
+			background-position: center center;
+			@media screen and (max-width:768px){
+				background:url('../img/#{$img}-xs.jpg');
+				background-size:cover;
+				background-position:unset;
+			}
+			@media screen and (max-width:576px){
+				background:url('../img/#{$img}-xs.jpg');
+				background-size:cover;
+				background-position: center center;
+			}
+
+		}
+	}
+}
+
+//Gắn background-img cho vehicles function 4 blocks
+@each $stt,$img in (1,item-1) (2,item-2) (3,item-3) (4,item-4){
+		.function-#{$stt}{
+			background:url('../img/#{$img}.jpg');
+			background-size:120%;
+			background-position: center 0;
+			background-repeat:no-repeat;
+			background-color:$color-white;
+			@media screen and (min-width:440px) and (max-width:576px){
+				background-size:100%;
+			}
+			@media screen and (min-width:769px) and (max-width:992px){
+				background-size:150%;
+			}
+		}
+}
+
+//Gắn background img cho các hình - DISCOVER HONDA
+@each $stt,$img in (1,discover-1) (2,discover-2) (3,discover-3) (4,discover-4) (5,discover-5){
+		.discover-item-#{$stt}{
+			background:url('../img/#{$img}.jpg');
+			background-size:120%;
+			background-position: center 0;
+			background-repeat:no-repeat;
+			background-color:$color-white;
+		}
+}
